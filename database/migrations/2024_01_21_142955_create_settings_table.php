@@ -15,13 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('key');
             $table->string('value')->nullable();
-            // $table->string('email');
-            // $table->string('phone',30);
-            // $table->string('Facebook')->nullable();
-            // $table->string('instagram')->nullable();
-            // $table->string('x')->nullable();
-            // $table->string('youtube')->nullable();
-            // $table->string('linkedin')->nullable();
             $table->timestamps();
         });
     }

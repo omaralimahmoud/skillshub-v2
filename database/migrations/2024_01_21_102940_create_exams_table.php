@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('skill_id')->constrained()->cascadeOnDelete();
             $table->text('name');
             $table->text('description');
-            $table->string('image',100);
+            $table->string('image', 100);
             $table->tinyInteger('question_number');
             $table->tinyInteger('difficulty');
             $table->smallInteger('duration_minutes');

@@ -4,12 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
 
 class Category extends Model
 {
-    use HasFactory;
+    use HasFactory, HasTranslations;
 
-    protected $guarded = ['id', 'created_at', 'updated_at'];
+    protected $fillable = ['name', 'is_active'];
+
+    public $translatable = ['name'];
 
     public function skills()
     {

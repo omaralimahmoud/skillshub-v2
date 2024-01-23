@@ -16,8 +16,24 @@ class ExamFactory extends Factory
      */
     public function definition(): array
     {
+        static $i = 0;
+        $i++;
+
         return [
-            //
+            'name' => [
+                'en' => fake()->word(),
+                'ar' => fake()->word(),
+            ],
+
+            'description' => [
+                'en' => fake()->text(5000),
+                'ar' => fake()->text(5000),
+            ],
+            'image' => "exams/$i.png",
+            'question_number' => 15,
+            'difficulty' => fake()->numberBetween(1, 5),
+            'duration_minutes' => fake()->numberBetween(1, 3) * 30,
+
         ];
     }
 }

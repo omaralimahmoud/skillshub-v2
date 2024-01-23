@@ -4,12 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
 
 class Exam extends Model
 {
-    use HasFactory;
+    use HasFactory, HasTranslations;
 
-    protected $guarded = ['id', 'created_at', 'updated_at'];
+    protected $fillable = ['name', 'description', 'image', 'question_number', 'difficulty', 'duration_minutes', 'is_active', 'skill_id'];
+
+    public $translatable = ['name', 'description'];
 
     public function skill()
     {

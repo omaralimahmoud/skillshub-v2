@@ -3,8 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
+use App\Models\Exam;
+use App\Models\Question;
 use App\Models\Skill;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class CategorySeeder extends Seeder
@@ -14,6 +15,12 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        Category::factory()->has(Skill::factory()->count(8))->count(5)->create();
+        Category::factory()->count(5)->has(
+            Skill::factory()->has(
+                Exam::factory()->has(
+                    Question::factory()->count(15),
+                )->count(2)
+            )->count(8)
+        )->create();
     }
 }

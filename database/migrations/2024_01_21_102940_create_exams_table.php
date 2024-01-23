@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('exams', function (Blueprint $table) {
             $table->id();
             $table->foreignId('skill_id')->constrained()->cascadeOnDelete();
-            $table->text('name');
-            $table->text('description');
+            $table->json('name');
+            $table->json('description');
             $table->string('image', 100);
             $table->tinyInteger('question_number');
             $table->tinyInteger('difficulty');

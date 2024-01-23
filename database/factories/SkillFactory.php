@@ -16,15 +16,16 @@ class SkillFactory extends Factory
      */
     public function definition(): array
     {
-        static $i =0;
+        static $i = 0;
         $i++;
-        return [
-              'name'=>json_encode([
-                'en'=> fake()->word(),
-                'ar'=> fake()->word(),
-              ]),
 
-              'image'=> "skill/$i.png",
+        return [
+            'name' => [
+                'en' => fake()->word(),
+                'ar' => fake()->word(),
+            ],
+
+            'image' => "skill/$i.png",
 
         ];
     }

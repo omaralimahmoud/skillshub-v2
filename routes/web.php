@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    //  dump(Category::first()->getTranslation('name', 'en'));
+    //  dump(Category::first()->getTranslation('name', 'ar'));
 
     return view('welcome');
 });

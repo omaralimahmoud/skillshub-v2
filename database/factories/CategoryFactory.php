@@ -17,15 +17,10 @@ class CategoryFactory extends Factory
     public function definition(): array
     {
         return [
-             'name'=>json_encode(
-              [
-                'en'=> fake()->word(),
-                'ar'=> fake()->word(),
-              ]
-             )
-
-
-
+            'name' => [
+                'en' => fake()->word(),
+                'ar' => fake()->word(),
+            ],
         ];
     }
 }

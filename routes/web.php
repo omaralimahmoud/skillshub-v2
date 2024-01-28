@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Category;
+use App\Http\Controllers\Website\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    //  dump(Category::first()->getTranslation('name', 'en'));
-    //  dump(Category::first()->getTranslation('name', 'ar'));
-
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home.index');

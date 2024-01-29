@@ -10,7 +10,12 @@ class Skill extends Model
 {
     use HasFactory, HasTranslations;
 
-    protected $fillable = ['name', 'image', 'is_active', 'category_id'];
+    protected $fillable = [
+        'name',
+        'image',
+        'is_active',
+        'category_id',
+    ];
 
     public $translatable = ['name'];
 

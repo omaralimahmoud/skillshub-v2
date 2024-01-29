@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Website\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,4 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('home.index');
+Route::name('website.')->group(base_path('routes/website.php'));
+
+Route::prefix('dashboard')->name('dashboard.')->group(base_path('routes/dashboard.php'));

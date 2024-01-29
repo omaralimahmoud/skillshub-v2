@@ -1,11 +1,8 @@
 <footer id="footer" class="section">
-
     <!-- container -->
     <div class="container">
-
         <!-- row -->
         <div id="bottom-footer" class="row">
-
             <!-- social -->
             <div class="col-md-4 col-md-push-8">
                 <ul class="footer-social">
@@ -18,7 +15,6 @@
                 </ul>
             </div>
             <!-- /social -->
-
             <!-- copyright -->
             <div class="col-md-8 col-md-pull-4">
                 <div class="footer-copyright">
@@ -26,11 +22,8 @@
                 </div>
             </div>
             <!-- /copyright -->
-
         </div>
         <!-- row -->
-
     </div>
     <!-- /container -->
-
 </footer>

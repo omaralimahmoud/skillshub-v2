@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('exam_user', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->foreignId('exam_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->float('score', 5, 2);
             $table->smallInteger('time_minutes');
             $table->enum('status', ['opened', 'closed']);

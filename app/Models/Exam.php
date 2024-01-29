@@ -10,7 +10,16 @@ class Exam extends Model
 {
     use HasFactory, HasTranslations;
 
-    protected $fillable = ['name', 'description', 'image', 'question_number', 'difficulty', 'duration_minutes', 'is_active', 'skill_id'];
+    protected $fillable = [
+        'skill_id',
+        'name',
+        'description',
+        'image',
+        'question_number',
+        'difficulty',
+        'duration_minutes',
+        'is_active',
+    ];
 
     public $translatable = ['name', 'description'];
 

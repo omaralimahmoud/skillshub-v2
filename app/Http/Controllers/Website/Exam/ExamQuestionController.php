@@ -14,7 +14,7 @@ class ExamQuestionController extends Controller
     {
         $questions = $exam->questions;
 
-        return view('website.pages.exams.create', [
+        return view('website.pages.exams.questions.create', [
             'exam' => $exam,
             'questions' => $questions,
         ]);

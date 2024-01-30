@@ -8,6 +8,6 @@ class SkillController extends Controller
 {
     public function show($id)
     {
-        return view('website.pages.skill.show');
+        return view('website.pages.skills.show');
     }
 }

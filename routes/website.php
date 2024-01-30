@@ -14,6 +14,7 @@ Route::get('categories/{id}', [CategoryController::class, 'show'])->name('catego
 Route::get('skills/{id}', [SkillController::class, 'show'])->name('skills.show');
 
 Route::resource('exams', ExamController::class)->only(['show']);
+// custom route
 Route::prefix('exams/{exam}/questions')
     ->name('exams.questions.')
     ->controller(ExamQuestionController::class)

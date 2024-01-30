@@ -8,6 +8,6 @@ class CategoryController extends Controller
 {
     public function show($id)
     {
-        return view('website.pages.category.show');
+        return view('website.pages.categories.show');
     }
 }

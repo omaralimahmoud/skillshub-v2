@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use Mcamara\LaravelLocalization\Middleware\LocaleSessionRedirect;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::name('website.')->group(base_path('routes/website.php'));
+Route::prefix(LaravelLocalization::setLocale())->middleware(LocaleSessionRedirect::class)->group(function () {
+    Route::name('website.')->group(base_path('routes/website.php'));
 
-Route::prefix('dashboard')->name('dashboard.')->group(base_path('routes/dashboard.php'));
+    Route::prefix('dashboard')->name('dashboard.')->group(base_path('routes/dashboard.php'));
+});

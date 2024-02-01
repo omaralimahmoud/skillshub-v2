@@ -16,9 +16,9 @@
              <div class="container">
                  <div class="row">
                      <div class="col-md-8">
-                         <h1 class="white-text">SkillsHub Free Online Skill Assessment</h1>
-                         <p class="lead white-text">Libris vivendo eloquentiam ex ius, nec id splendide abhorreant, eu pro alii error homero.</p>
-                         <a class="main-button icon-button" href="#">Get Started!</a>
+                         <h1 class="white-text">{{ __('website.pages.home.hero_title') }}</h1>
+                         <p class="lead white-text">{{ __('website.pages.home.hero_description') }}</p>
+                         <a class="main-button icon-button" href="#">{{ __('website.pages.home.get_started_button') }}</a>
                      </div>
                  </div>
              </div>
@@ -35,8 +35,8 @@
              <!-- row -->
              <div class="row">
                  <div class="section-header text-center">
-                     <h2>Popular Exams</h2>
-                     <p class="lead">Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.</p>
+                     <h2>{{ __('website.pages.home.popular_exams') }}</h2>
+                     <p class="lead">{{ __('website.pages.home.popular_exams_description') }}</p>
                  </div>
              </div>
              <!-- /row -->
@@ -181,7 +181,7 @@
 
              <div class="row">
                  <div class="center-btn">
-                     <a class="main-button icon-button" href="#">More Courses</a>
+                     <a class="main-button icon-button" href="#">{{ __('website.pages.home.more_exams_button') }}</a>
                  </div>
              </div>
 
@@ -204,9 +204,9 @@
              <div class="row">
 
                  <div class="col-md-8 col-md-offset-2 text-center">
-                     <h2 class="white-text">Contact Us</h2>
-                     <p class="lead white-text">Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.</p>
-                     <a class="main-button icon-button" href="contact.html">Contact Us Now</a>
+                     <h2 class="white-text">{{ __('website.global.contact') }} </h2>
+                     <p class="lead white-text">{{ __('website.pages.home.contact-description') }}</p>
+                     <a class="main-button icon-button" href="contact.html">{{ __('website.pages.home.contact_us_button') }}</a>
                  </div>
 
              </div>

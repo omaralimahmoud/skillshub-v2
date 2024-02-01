@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_','-',app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     @include('website.layouts.partials.main.styles')
     @stack('style')
 </head>
+
 <body>
 
     @include('website.layouts.partials.main.navbar')
@@ -21,4 +23,5 @@
     @include('website.layouts.partials.main.scripts')
     @stack('scripts')
 </body>
+
 </html>

@@ -68,7 +68,7 @@
                     <!-- /blog post -->
 
                     <div>
-                        <button class="main-button icon-button pull-left">Start Exam</button>
+                        <button class="main-button icon-button pull-left">{{ __('website.pages.exams.start_exam_button') }}</button>
                     </div>
                 </div>
                 <!-- /main blog -->
@@ -78,10 +78,10 @@
 
                     <!-- exam details widget -->
                     <ul class="list-group">
-                        <li class="list-group-item">Skill: programming</li>
-                        <li class="list-group-item">Questions: 20</li>
-                        <li class="list-group-item">Duration: 30 mins</li>
-                        <li class="list-group-item">Difficulty:
+                        <li class="list-group-item">{{ __('website.pages.exams.skill') }}: programming</li>
+                        <li class="list-group-item">{{ __('website.pages.exams.questions') }} 20</li>
+                        <li class="list-group-item">{{ __('website.pages.exams.duration') }}: 30 mins</li>
+                        <li class="list-group-item">{{ __('website.pages.exams.difficulty') }}:
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>

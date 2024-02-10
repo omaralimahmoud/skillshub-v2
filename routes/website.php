@@ -7,11 +7,11 @@ use App\Http\Controllers\Website\HomeController;
 use App\Http\Controllers\Website\SkillController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::resource('/', HomeController::class)->only('index');
 
-Route::get('categories/{id}', [CategoryController::class, 'show'])->name('categories.show');
+Route::resource('categories', CategoryController::class)->only('show');
 
-Route::get('skills/{id}', [SkillController::class, 'show'])->name('skills.show');
+Route::resource('skills', SkillController::class)->only('show');
 
 Route::resource('exams', ExamController::class)->only(['show']);
 // custom route

@@ -8,8 +8,9 @@ class HomeController extends Controller
 {
     public function index()
     {
-        //dd(__('website.navbar'));
 
-        return view('website.pages.home.index');
+        return view(
+            'website.pages.home.index'
+        );
     }
 }

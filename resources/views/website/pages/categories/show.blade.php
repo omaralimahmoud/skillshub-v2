@@ -166,14 +166,14 @@
                         <!-- pagination -->
                         <div class="col-md-12">
                             <div class="post-pagination">
-                                <a href="#" class="pagination-back pull-left">Back</a>
+                                <a href="#" class="pagination-back pull-left">{{ __('website.global.back') }}</a>
                                 <ul class="pages">
                                     <li class="active">1</li>
                                     <li><a href="#">2</a></li>
                                     <li><a href="#">3</a></li>
                                     <li><a href="#">4</a></li>
                                 </ul>
-                                <a href="#" class="pagination-next pull-right">Next</a>
+                                <a href="#" class="pagination-next pull-right">{{ __('website.global.next') }}</a>
                             </div>
                         </div>
                         <!-- pagination -->
@@ -197,7 +197,7 @@
 
                     <!-- category widget -->
                     <div class="widget category-widget">
-                        <h3>Categories</h3>
+                        <h3>{{ __('website.global.categories') }}</h3>
                         <a class="category" href="#">Programming <span>12</span></a>
                         <a class="category" href="#">Design <span>5</span></a>
                         <a class="category" href="#">Management <span>24</span></a>

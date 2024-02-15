@@ -28,4 +28,14 @@ class Skill extends Model
     {
         return $this->hasMany(Exam::class);
     }
+
+    public function getStudentsCount()
+    {
+        $studentCount = 0;
+        foreach ($this->exams as $exam) {
+            $studentCount += $exam->users->count();
+        }
+
+        return $studentCount;
+    }
 }

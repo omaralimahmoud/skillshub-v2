@@ -25,7 +25,7 @@ class SkillFactory extends Factory
                 'ar' => fake()->word(),
             ],
 
-            'image' => "skill/$i.png",
+            'image' => "skills/$i.png",
 
         ];
     }

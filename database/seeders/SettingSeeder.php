@@ -31,5 +31,6 @@ class SettingSeeder extends Seeder
             'key' => 'instagram',
             'value' => 'https://www.instagram.com/',
         ]);
+
     }
 }

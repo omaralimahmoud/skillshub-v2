@@ -5,14 +5,7 @@
         <div id="bottom-footer" class="row">
             <!-- social -->
             <div class="col-md-4 col-md-push-8">
-                <ul class="footer-social">
-                    <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a></li>
-                    <li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="#" class="youtube"><i class="fa fa-youtube"></i></a></li>
-                    <li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
-                </ul>
+                <x-website.social-links />
             </div>
             <!-- /social -->
             <!-- copyright -->

@@ -6,26 +6,10 @@
 
 @section('content')
     <!-- Hero-area -->
-    <div class="hero-area section">
-
-        <!-- Backgound Image -->
-        <div class="bg-image bg-parallax overlay" style="background-image:url({{ asset('assets/website/images/page-background.jpg') }})"></div>
-        <!-- /Backgound Image -->
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-md-offset-1 text-center">
-                    <ul class="hero-area-tree">
-                        <li><a href="index.html">Home</a></li>
-                        <li>{{ $category->name }}</li>
-                    </ul>
-                    <h1 class="white-text">{{ $category->name }}</h1>
-
-                </div>
-            </div>
-        </div>
-
-    </div>
+    <x-website.breadcrumb.layout>
+        <x-website.breadcrumb.active text="{{ $category->name }}" />
+        <x-website.breadcrumb.text textName="{{ $category->name }}" />
+    </x-website.breadcrumb.layout>
     <!-- /Hero-area -->
 
     <!-- Blog -->
@@ -57,7 +41,12 @@
                                     <div class="blog-meta">
                                         <span>{{ \Carbon\Carbon::parse($skill->created_at)->format('d M, Y') }}</span>
                                         <div class="pull-right">
-                                            <span class="blog-meta-comments"><a href="#"><i class="fa fa-users"></i> {{ $skill->getStudentsCount() }}</a></span>
+                                            <span class="blog-meta-comments">
+                                                <a href="#">
+                                                    <i class="fa fa-users"></i>
+                                                    {{ $skill->getStudentsCount() }}
+                                                </a>
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
@@ -73,7 +62,7 @@
                     <!-- row -->
                     <div class="row">
 
-                        {{ $skills->links('website.pagination.Paginator') }}
+                        {{ $skills->links('website.layouts.partials.pagination.paginator') }}
 
                     </div>
                     <!-- /row -->

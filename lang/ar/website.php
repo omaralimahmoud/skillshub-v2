@@ -36,6 +36,16 @@ return [
             'submit_button' => 'إرسال الاجابات',
             'cancel_button' => 'إلغاء',
         ],
+        'contact' => [
+            'get_in_touch' => '   ابقى على تواصل معنا',
+            'send_a_message' => ' ارسل رسالة',
+            'contact_information' => 'معلومات الاتصال',
+            'name' => 'الاسم',
+            'email' => 'البريد الالكتروني',
+            'subject' => 'الموضوع',
+            'enter_your_message' => 'أدخل رسالتك',
+            'send_message' => 'أرسل رسالة',
+        ],
 
     ],
 

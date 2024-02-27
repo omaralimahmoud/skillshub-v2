@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Spatie\Translatable\HasTranslations;
 
 class Category extends Model
@@ -12,9 +13,9 @@ class Category extends Model
 
     protected $fillable = ['name', 'is_active'];
 
-    public $translatable = ['name'];
+    public array $translatable = ['name'];
 
-    public function skills()
+    public function skills(): HasMany
     {
         return $this->hasMany(Skill::class);
     }

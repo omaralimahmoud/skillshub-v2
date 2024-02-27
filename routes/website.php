@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Website\CategoryController;
+use App\Http\Controllers\Website\ContactController;
 use App\Http\Controllers\Website\Exam\ExamController;
 use App\Http\Controllers\Website\Exam\ExamQuestionController;
 use App\Http\Controllers\Website\HomeController;
@@ -14,6 +15,7 @@ Route::resource('categories', CategoryController::class)->only('show');
 Route::resource('skills', SkillController::class)->only('show');
 
 Route::resource('exams', ExamController::class)->only(['show']);
+Route::resource('contact', ContactController::class)->only(['index', 'store']);
 // custom route
 Route::prefix('exams/{exam}/questions')
     ->name('exams.questions.')

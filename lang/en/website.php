@@ -36,6 +36,17 @@ return [
             'submit_button' => 'Submit',
             'cancel_button' => 'Cancel',
         ],
+        //Contact
+        'contact' => [
+            'get_in_touch' => 'Get In Touch',
+            'send_a_message' => 'Send A Message',
+            'contact_information' => 'Contact Information',
+            'name' => 'Name',
+            'email' => 'Email',
+            'subject' => 'Subject',
+            'enter_your_message' => 'Enter your Message',
+            'send_message' => 'Send Message',
+        ],
 
     ],
 

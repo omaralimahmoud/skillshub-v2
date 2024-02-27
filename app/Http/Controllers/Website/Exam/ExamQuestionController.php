@@ -12,6 +12,7 @@ class ExamQuestionController extends Controller
 {
     public function create(Exam $exam): View
     {
+
         $questions = $exam->questions;
 
         return view('website.pages.exams.questions.create', [

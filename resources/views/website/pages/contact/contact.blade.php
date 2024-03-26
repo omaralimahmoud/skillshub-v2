@@ -45,8 +45,8 @@
                         @include('website.pages.errors.ajax-error')
                         <form id="contact-form">
                             @csrf
-                            <input id="name" class="input" type="text" name="name" placeholder="{{ __('website.pages.contact.name') }}">
-                            <input id="email" class="input" type="email" name="email" placeholder="{{ __('website.pages.contact.email') }}">
+                            <input id="name" class="input" type="text" name="name" placeholder="{{ __('website.global.name') }}">
+                            <input id="email" class="input" type="email" name="email" placeholder="{{ __('website.global.email') }}">
                             <input id="subject" class="input" type="text" name="subject" placeholder="{{ __('website.pages.contact.subject') }}">
                             <textarea id="body" class="input" name="body" placeholder="{{ __('website.pages.contact.enter_your_message') }}"></textarea>
                             <button id="contact-form-button" type="submit" class="main-button icon-button pull-right">{{ __('website.pages.contact.send_message') }}</button>

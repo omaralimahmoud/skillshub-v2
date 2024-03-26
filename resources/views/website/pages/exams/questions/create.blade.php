@@ -1,5 +1,7 @@
 @extends('website.layouts.main')
-
+@push('style')
+    <link href="{{ asset('assets/website/css/TimeCircles.css') }}" rel="stylesheet">
+@endpush
 @section('title')
     Exam Questions : {{ $exam->name }}
 @endsection
@@ -27,7 +29,9 @@
 
                 <!-- main blog -->
                 <div id="main" class="col-md-9">
-
+                    <form id="exam-submit-form" action="{{ route('website.exams.questions.submit', $exam->id) }}" method="post">
+                        @csrf
+                    </form>
                     <!-- blog post -->
                     <div class="blog-post mb-5">
                         <p>
@@ -39,25 +43,25 @@
                                     <div class="panel-body">
                                         <div class="radio">
                                             <label>
-                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+                                                <input type="radio" name="answers[{{ $question->id }}]" value="1" form="exam-submit-form">
                                                 {{ $question->option_1 }}
                                             </label>
                                         </div>
                                         <div class="radio">
                                             <label>
-                                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                                <input type="radio" name="answers[{{ $question->id }}]" value="2" form="exam-submit-form">
                                                 {{ $question->option_2 }}
                                             </label>
                                         </div>
                                         <div class="radio">
                                             <label>
-                                                <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+                                                <input type="radio" name="answers[{{ $question->id }}]" value="3" form="exam-submit-form">
                                                 {{ $question->option_3 }}
                                             </label>
                                         </div>
                                         <div class="radio">
                                             <label>
-                                                <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+                                                <input type="radio" name="answers[{{ $question->id }}]" value="4" form="exam-submit-form">
                                                 {{ $question->option_4 }}
                                             </label>
                                         </div>
@@ -69,7 +73,7 @@
                     <!-- /blog post -->
 
                     <div>
-                        <button class="main-button icon-button pull-left">{{ __('website.pages.exams.submit_button') }}</button>
+                        <button type="submit" form="exam-submit-form" class="main-button icon-button pull-left">{{ __('website.pages.exams.submit_button') }}</button>
                         <button class="main-button icon-button btn-danger pull-left ml-sm">{{ __('website.pages.exams.cancel_button') }}</button>
                     </div>
                 </div>
@@ -88,3 +92,24 @@
     </div>
     <!-- /Blog -->
 @endsection
+@push('scripts')
+    <script type="text/javascript" src="{{ asset('assets/website/js/TimeCircles.js') }}"></script>
+    <script>
+        $(".duratino-countdown").TimeCircles({
+            time: {
+                Days: {
+                    show: false
+                },
+
+                Hours: {
+                    color: "red"
+                },
+            },
+            count_past_zero: false,
+        }).addListener(function(unit, value, total) {
+            if (total <= 0) {
+                $('#exam-submit-form').submit();
+            };
+        });
+    </script>
+@endpush

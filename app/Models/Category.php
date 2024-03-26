@@ -19,4 +19,9 @@ class Category extends Model
     {
         return $this->hasMany(Skill::class);
     }
+
+    public function scopeActive($query)
+    {
+        return $query->where('is_active', 1);
+    }
 }

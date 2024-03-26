@@ -22,7 +22,7 @@ class Navbar extends Component
      */
     public function render(): View|Closure|string
     {
-        $categories = Category::select('id', 'name')->get();
+        $categories = Category::select('id', 'name')->active()->get();
 
         return view('components.website.navbar', [
             'categories' => $categories,

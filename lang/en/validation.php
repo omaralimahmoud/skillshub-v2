@@ -173,6 +173,26 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+
+        'name' => [
+            'required' => 'الاسم مطلوب ',
+        ],
+
+        'password' => [
+            'required' => 'كلمه السر مطلوبه  ',
+            'confirmed' => 'كلمه السر  غير متوافقه    ',
+            'min' => [
+                'string' => 'يجب أن يتكون حقل كلمة المرور من 8 أحرف على الأقل.',
+            ],
+
+        ],
+
+        'email' => [
+            'required' => '  الايميل مطلوب  ',
+            'unique' => '    الايميل موجود مسبقا    ',
+
+        ],
+
     ],
 
     /*

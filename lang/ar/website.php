@@ -8,9 +8,21 @@ return [
         'contact' => 'اتصل بنا',
         'sign_up' => ' تسجيل حساب',
         'Sign_in' => 'تسجيل دخول',
+        'sign_out' => 'تسجيل خروج',
+        'remember_me' => 'تذكرني',
+        'forgot_password' => 'هل نسيت كلمة السر',
+        'sign_up_and_estimate_your_skills' => 'قم بالتسجيل وتقدير مهاراتك',
+        'sign_in_to_start_exam' => 'قم بتسجيل الدخول لبدء الامتحان',
         'footer_description' => ' حقوق النشر 2021 جميع الحقوق محفوظه تم الصنع بواسطة ',
         'next' => 'التالي',
         'back' => ' السابق',
+        'password' => ' كلمة السر',
+        'confirm_password' => 'تأكيد كلمة المرور',
+        'name' => 'الاسم',
+        'email' => 'البريد الالكتروني',
+        'submit' => 'تاكيد',
+        'a_verification_email_sent_successfully_please_check_your_inbox' => 'تم إرسال رسالة التحقق بنجاح، يرجى التحقق من صندوق الوارد الخاص بك',
+        'resend_email' => ' إعادة إرسال البريد الإلكتروني',
     ],
 
     //Pages
@@ -40,13 +52,17 @@ return [
             'get_in_touch' => '   ابقى على تواصل معنا',
             'send_a_message' => ' ارسل رسالة',
             'contact_information' => 'معلومات الاتصال',
-            'name' => 'الاسم',
-            'email' => 'البريد الالكتروني',
             'subject' => 'الموضوع',
             'enter_your_message' => 'أدخل رسالتك',
             'send_message' => 'أرسل رسالة',
         ],
 
+        'profile' => [
+            'profile' => 'الصفحه الشخصيه',
+            'exam_name' => 'اسم الامتحان',
+            'score' => 'درجه الامتحان',
+            'time_minutes' => 'الوقت',
+        ],
     ],
 
 ];

@@ -40,4 +40,9 @@ class Skill extends Model
 
         return $studentCount;
     }
+
+    public function scopeActive($query)
+    {
+        return $query->where('is_active', 1);
+    }
 }

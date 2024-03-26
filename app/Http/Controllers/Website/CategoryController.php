@@ -11,9 +11,9 @@ class CategoryController extends Controller
     public function show(Category $category): View
     {
 
-        $categories = Category::select('id', 'name')->withCount('skills')->get();
+        $categories = Category::select('id', 'name')->active()->withCount('skills')->get();
 
-        $skills = $category->skills()->with('exams.users')->paginate(6);
+        $skills = $category->skills()->active()->with('exams.users')->paginate(6);
 
         return view('website.pages.categories.show', [
             'category' => $category,

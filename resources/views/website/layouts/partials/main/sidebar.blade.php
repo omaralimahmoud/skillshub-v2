@@ -24,6 +24,7 @@
     </ul>
     <!-- /exam details widget -->
 
+    <div class="duratino-countdown" data-timer="{{ $exam->duration_minutes * 60}}"></div>
 
 
 </div>

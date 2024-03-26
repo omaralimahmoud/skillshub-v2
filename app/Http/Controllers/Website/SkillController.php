@@ -10,7 +10,7 @@ class SkillController extends Controller
 {
     public function show(Skill $skill): View
     {
-        $exams = $skill->exams()->withCount('users')->get();
+        $exams = $skill->exams()->active()->withCount('users')->get();
 
         //dd($exams);
         return view('website.pages.skills.show', [

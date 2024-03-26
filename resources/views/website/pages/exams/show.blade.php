@@ -27,7 +27,7 @@
 
                 <!-- main blog -->
                 <div id="main" class="col-md-9">
-
+                    @include('website.pages.errors.error')
                     <!-- blog post -->
                     <div class="blog-post mb-5">
                         <p>{{ $exam->description }} </p>
@@ -35,7 +35,14 @@
                     <!-- /blog post -->
 
                     <div>
-                        <a href="{{ route('website.exams.questions.create', $exam->id) }}" class="main-button icon-button pull-left">{{ __('website.pages.exams.start_exam_button') }}</a>
+                        @if ($canStartButton)
+                            <form action="{{ route('website.exams.questions.store', $exam->id) }}" method="POST">
+                                @csrf
+                                <button type="submit" class="main-button icon-button pull-left">{{ __('website.pages.exams.start_exam_button') }}</button>
+
+
+                                <form>
+                        @endif
                     </div>
                 </div>
                 <!-- /main blog -->

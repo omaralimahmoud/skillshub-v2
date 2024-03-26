@@ -8,9 +8,21 @@ return [
         'contact' => 'Contact',
         'sign_up' => 'Sign Up',
         'Sign_in' => 'Sign In',
+        'sign_out' => 'Sign Out',
+        'remember_me' => 'Remember me',
+        'forgot_password' => 'Forgot Password',
+        'sign_up_and_estimate_your_skills' => 'Sign Up and estimate your skills',
+        'sign_in_to_start_exam' => 'Sign In to start exam',
         'footer_description' => 'Copyright 2021. All Rights Reserved. | Made with by SkillsHub',
         'next' => 'Next',
         'back' => 'Back',
+        'password' => 'Password',
+        'confirm_password' => 'Confirm Password',
+        'name' => 'Name',
+        'email' => 'Email',
+        'submit' => 'Submit',
+        'a_verification_email_sent_successfully_please_check_your_inbox' => 'a Verification Email sent successfully, please check your inbox',
+        'resend_email' => 'Resend Email',
     ],
 
     //Pages
@@ -41,11 +53,17 @@ return [
             'get_in_touch' => 'Get In Touch',
             'send_a_message' => 'Send A Message',
             'contact_information' => 'Contact Information',
-            'name' => 'Name',
-            'email' => 'Email',
+
             'subject' => 'Subject',
             'enter_your_message' => 'Enter your Message',
             'send_message' => 'Send Message',
+        ],
+
+        'profile' => [
+            'profile' => 'Profile',
+            'exam_name' => 'Exam Name',
+            'score' => 'Score',
+            'time_minutes' => 'Time Minutes',
         ],
 
     ],

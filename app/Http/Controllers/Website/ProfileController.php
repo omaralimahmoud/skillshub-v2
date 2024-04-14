@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
-    
     public function index()
     {
         $exams = Auth::user()->exams;

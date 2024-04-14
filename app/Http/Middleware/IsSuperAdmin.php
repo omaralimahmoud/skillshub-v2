@@ -18,7 +18,7 @@ class IsSuperAdmin
     public function handle(Request $request, Closure $next): Response
     {
         $SuperAdminRole = Role::firstWhere('name', 'superAdmin');
-        if (Auth::user()->role_id !== $SuperAdminRole) {
+        if (Auth::user()->role_id !== $SuperAdminRole->id) {
             return redirect(route('website.index'));
         }
 

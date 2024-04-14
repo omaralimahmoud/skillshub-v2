@@ -19,7 +19,7 @@ class IsAdmin
     {
         $isAdmin = Role::firstWhere('name', 'admin');
 
-        if (Auth::user()->role_id !== $isAdmin) {
+        if (Auth::user()->role_id !== $isAdmin->id) {
             return redirect(route('website.index'));
         }
 

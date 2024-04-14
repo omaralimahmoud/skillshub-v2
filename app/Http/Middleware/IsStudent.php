@@ -18,7 +18,7 @@ class IsStudent
     public function handle(Request $request, Closure $next): Response
     {
         $studentRole = Role::firstWhere('name', 'student');
-        if (Auth::user()->role_id !== $studentRole) {
+        if (Auth::user()->role_id !== $studentRole->id) {
             return redirect(route('website.index'));
         }
 

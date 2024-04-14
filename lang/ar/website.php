@@ -23,6 +23,7 @@ return [
         'submit' => 'تاكيد',
         'a_verification_email_sent_successfully_please_check_your_inbox' => 'تم إرسال رسالة التحقق بنجاح، يرجى التحقق من صندوق الوارد الخاص بك',
         'resend_email' => ' إعادة إرسال البريد الإلكتروني',
+        'dashboard' => 'لوحه التحكم',
     ],
 
     //Pages

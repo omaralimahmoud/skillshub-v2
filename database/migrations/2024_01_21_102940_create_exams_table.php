@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('exams', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('skill_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('skill_id')->constrained()->restrictOnDelete();
             $table->json('name');
             $table->json('description');
             $table->string('image', 100);

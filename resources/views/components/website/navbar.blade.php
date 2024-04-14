@@ -24,6 +24,8 @@
 
             @if (auth()->user()->hasRole('student'))
                 <li><a href="{{ route('website.profile.index') }}">{{ __('website.pages.profile.profile') }}</a></li>
+            @else
+                <li><a href="{{ route('dashboard.index') }}">{{ __('website.global.dashboard') }}</a></li>
             @endif
 
             <li> <a id="logout-link" href="#">{{ __('website.global.sign_out') }}</a></li>

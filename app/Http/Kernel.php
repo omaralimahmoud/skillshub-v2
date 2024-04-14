@@ -56,7 +56,7 @@ class Kernel extends HttpKernel
         'auth' => \App\Http\Middleware\Authenticate::class,
         'student' => \App\Http\Middleware\IsStudent::class,
         'admin' => \App\Http\Middleware\IsAdmin::class,
-        'superadmin' => \App\Http\Middleware\IsSuperAdmin::class,
+        'super-Admin' => \App\Http\Middleware\IsSuperAdmin::class,
         'can-enter-exam' => \App\Http\Middleware\CanEnterExam::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'auth.session' => \Illuminate\Session\Middleware\AuthenticateSession::class,

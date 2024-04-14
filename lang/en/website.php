@@ -23,6 +23,7 @@ return [
         'submit' => 'Submit',
         'a_verification_email_sent_successfully_please_check_your_inbox' => 'a Verification Email sent successfully, please check your inbox',
         'resend_email' => 'Resend Email',
+        'dashboard' => 'dashboard',
     ],
 
     //Pages

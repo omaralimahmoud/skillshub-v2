@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('exam_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('exam_id')->constrained()->restrictOnDelete();
             $table->text('title');
             $table->string('option_1');
             $table->string('option_2');

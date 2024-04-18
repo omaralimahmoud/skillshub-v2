@@ -32,7 +32,7 @@
                                 <div class="single-blog">
                                     <div class="blog-img">
                                         <a href="exam.html">
-                                            <img src="{{ asset("assets/uplods/$exam->image") }}" alt="">
+                                            <img src="{{ asset("assets/uploads/$exam->image") }}" alt="">
                                         </a>
                                     </div>
                                     <h4><a href="{{ route('website.exams.show', $exam->id) }}"> {{ $exam->name }}</a></h4>

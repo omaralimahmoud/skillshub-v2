@@ -1,7 +1,7 @@
 @extends('dashboard.layouts.main')
 
 @section('title')
-    categories
+    skills
 @endsection
 
 @section('content')
@@ -12,12 +12,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>categories</h1>
+                        <h1>skills</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('dashboard.index') }}">Home</a></li>
-                            <li class="breadcrumb-item active">categories </li>
+                            <li class="breadcrumb-item active">skills </li>
 
                         </ol>
                     </div>
@@ -33,18 +33,18 @@
                         @include('dashboard.pages.messages.message')
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">All Categories</h3>
+                                <h3 class="card-title">All skills</h3>
 
                                 <div class="card-tools">
                                     <!-- <div class="input-group input-group-sm" style="width: 150px;">
-                                                                                <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+                                                                                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
 
-                                                                                <div class="input-group-append">
-                                                                                    <button type="submit" class="btn btn-default">
-                                                                                        <i class="fas fa-search"></i>
-                                                                                    </button>
-                                                                                </div>
-                                                                            </div>-->
+                                                                                    <div class="input-group-append">
+                                                                                        <button type="submit" class="btn btn-default">
+                                                                                            <i class="fas fa-search"></i>
+                                                                                        </button>
+                                                                                    </div>
+                                                                                </div>-->
                                     <button type="button" data-toggle="modal" class=" btn btn-sm  btn-primary" data-target="#add-modal">
                                         Add New
                                     </button>
@@ -57,29 +57,35 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Name</th>
+                                            <th>Image</th>
+                                            <th>Category</th>
                                             <th>Active</th>
                                             <th>Actions</th>
 
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($categories as $category)
+                                        @foreach ($skills as $skill)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $category->name }}</td>
+                                                <td>{{ $skill->name }}</td>
                                                 <td>
-                                                    @if ($category->is_active)
+                                                 <img src="{{ asset("uploads/$skill->image") }}" height="50px" alt="">
+                                                </td>
+                                                <td>{{ $skill->category->name }}</td>
+                                                <td>
+                                                    @if ($skill->is_active)
                                                         <span class=" badge bg-success">Yes</span>
                                                     @else
                                                         <span class=" badge  bg-danger">No</span>
                                                     @endif
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-sm btn-info edit-btn" data-toggle="modal" data-target="#edit-modal" data-id="{{ $category->id }}" data-name-en="{{ $category->getTranslation('name', 'en') }}" data-name-ar="{{ $category->getTranslation('name', 'ar') }}">
+                                                    <button type="button" class="btn btn-sm btn-info edit-btn" data-toggle="modal" data-target="#edit-modal" data-id="{{ $skill->id }}" data-name-en="{{ $skill->getTranslation('name', 'en') }}" data-name-ar="{{ $skill->getTranslation('name', 'ar') }}" data-image="{{ $skill->image }}" data-category_id="{{ $skill->category_id }}">
                                                         <i class=" fas fa-edit"></i>
                                                     </button>
 
-                                                    <form action="{{ route('dashboard.categories.destroy', $category->id) }}" method="POST" class=" d-inline-block">
+                                                    <form action="{{ route('dashboard.skills.destroy', $skill->id) }}" method="POST" class=" d-inline-block">
                                                         @csrf
                                                         @method('DELETE')
 
@@ -92,7 +98,7 @@
 
 
 
-                                                    <a href="{{ route('dashboard.categories.toggle', $category->id) }}" class=" btn btn-sm  btn-secondary">
+                                                    <a href="{{ route('dashboard.skills.toggle', $skill->id) }}" class=" btn btn-sm  btn-secondary">
                                                         <i class="fas fa-toggle-on"></i>
                                                     </a>
                                                 </td>
@@ -106,7 +112,7 @@
                                     </tbody>
                                 </table>
                                 <div class=" d-flex justify-content-center my-3">
-                                    {{ $categories->links() }}
+                                    {{ $skills->links() }}
                                 </div>
 
                             </div>
@@ -136,7 +142,7 @@
                 </div>
                 <div class="modal-body">
                     @include('dashboard.pages.errors.errors')
-                    <form action=" {{ route('dashboard.categories.store') }}" method="POST" id="add-form">
+                    <form action=" {{ route('dashboard.skills.store') }}" method="POST" id="add-form" enctype="multipart/form-data">
                         @csrf
 
                         <div class=" row">
@@ -155,6 +161,31 @@
                             </div>
                         </div>
 
+                        <div class=" row">
+                            <div class=" col-6">
+                                <div class="form-group">
+                                    <label>Category</label>
+                                    <select class="custom-select form-control" name="category_id">
+                                        @foreach ($categories as $category)
+                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        @endforeach
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class=" col-6">
+                                <div class="form-group">
+                                    <label>Image</label>
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" name="image">
+                                            <label class="custom-file-label">Choose file</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
 
 
 
@@ -193,7 +224,7 @@
                 </div>
                 <div class="modal-body">
                     @include('dashboard.pages.errors.errors')
-                    <form action=" {{ route('dashboard.categories.update') }}" method="POST" id="edit-form">
+                    <form action=" {{ route('dashboard.skills.update') }}" method="POST" id="edit-form" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <input type="hidden" name="id" id="edit-form-id">
@@ -222,6 +253,31 @@
 
 
 
+                        <div class=" row">
+                            <div class=" col-6">
+                                <div class="form-group">
+                                    <label>Category</label>
+                                    <select class="custom-select form-control"name="category_id" id="edit-form-category-id">
+                                        @foreach ($categories as $category)
+                                            <option value="{{ $category->id }}">{{$category->name }}</option>
+                                        @endforeach
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class=" col-6">
+                                <div class="form-group">
+                                    <label>Image</label>
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" name="image">
+                                            <label class="custom-file-label">Choose file</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
 
 
 
@@ -246,10 +302,14 @@
             let id = $(this).attr('data-id')
             let nameEn = $(this).attr('data-name-en')
             let nameAr = $(this).attr('data-name-ar')
+            let image = $(this).attr('data-image')
+            let category_id = $(this).attr('data-category_id')
             // console.log(id, name, nameAr);
             $('#edit-form-id').val(id);
             $('#edit-form-name-en').val(nameEn);
             $('#edit-form-name-ar').val(nameAr);
+
+            $('#edit-form-category-id').val(category_id)
 
         })
     </script>

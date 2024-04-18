@@ -51,7 +51,7 @@
                      <div class="col-md-3 col-sm-6 col-xs-6">
                          <div class="course">
                              <a href="#" class="course-img">
-                                 <img src="{{ asset('assets/uplods/exams/exam1.jpg') }}" alt="">
+                                 <img src="{{ asset('assets/uploads/exams/exam1.jpg') }}" alt="">
                                  <i class="course-link-icon fa fa-link"></i>
                              </a>
                              <a class="course-title" href="#">Beginner to Pro in Excel: Financial Modeling and Valuation</a>
@@ -66,7 +66,7 @@
                      <div class="col-md-3 col-sm-6 col-xs-6">
                          <div class="course">
                              <a href="#" class="course-img">
-                                 <img src="{{ asset('assets/uplods/exams/exam2.jpg') }}" alt="">
+                                 <img src="{{ asset('assets/uploads/exams/exam2.jpg') }}" alt="">
                                  <i class="course-link-icon fa fa-link"></i>
                              </a>
                              <a class="course-title" href="#">Introduction to CSS </a>
@@ -81,7 +81,7 @@
                      <div class="col-md-3 col-sm-6 col-xs-6">
                          <div class="course">
                              <a href="#" class="course-img">
-                                 <img src="{{ asset('assets/uplods/exams/exam3.jpg') }}" alt="">
+                                 <img src="{{ asset('assets/uploads/exams/exam3.jpg') }}" alt="">
                                  <i class="course-link-icon fa fa-link"></i>
                              </a>
                              <a class="course-title" href="#">The Ultimate Drawing Course | From Beginner To Advanced</a>
@@ -95,7 +95,7 @@
                      <div class="col-md-3 col-sm-6 col-xs-6">
                          <div class="course">
                              <a href="#" class="course-img">
-                                 <img src="{{ asset('assets/uplods/exams/exam4.jpg') }}" alt="">
+                                 <img src="{{ asset('assets/uploads/exams/exam4.jpg') }}" alt="">
                                  <i class="course-link-icon fa fa-link"></i>
                              </a>
                              <a class="course-title" href="#">The Complete Web Development Course</a>
@@ -116,7 +116,7 @@
                      <div class="col-md-3 col-sm-6 col-xs-6">
                          <div class="course">
                              <a href="#" class="course-img">
-                                 <img src="{{ asset('assets/uplods/exams/exam5.jpg') }}" alt="">
+                                 <img src="{{ asset('assets/uploads/exams/exam5.jpg') }}" alt="">
                                  <i class="course-link-icon fa fa-link"></i>
                              </a>
                              <a class="course-title" href="#">PHP Tips, Tricks, and Techniques</a>
@@ -131,7 +131,7 @@
                      <div class="col-md-3 col-sm-6 col-xs-6">
                          <div class="course">
                              <a href="#" class="course-img">
-                                 <img src="{{ asset('assets/uplods/exams/exam6.jpg') }}" alt="">
+                                 <img src="{{ asset('assets/uploads/exams/exam6.jpg') }}" alt="">
                                  <i class="course-link-icon fa fa-link"></i>
                              </a>
                              <a class="course-title" href="#">All You Need To Know About Programming</a>
@@ -146,7 +146,7 @@
                      <div class="col-md-3 col-sm-6 col-xs-6">
                          <div class="course">
                              <a href="#" class="course-img">
-                                 <img src="{{ asset('assets/uplods/exams/exam7.jpg') }}" alt="">
+                                 <img src="{{ asset('assets/uploads/exams/exam7.jpg') }}" alt="">
                                  <i class="course-link-icon fa fa-link"></i>
                              </a>
                              <a class="course-title" href="#">How to Get Started in Photography</a>
@@ -162,7 +162,7 @@
                      <div class="col-md-3 col-sm-6 col-xs-6">
                          <div class="course">
                              <a href="#" class="course-img">
-                                 <img src="{{ asset('assets/uplods/exams/exam8.jpg') }}" alt="">
+                                 <img src="{{ asset('assets/uploads/exams/exam8.jpg') }}" alt="">
                                  <i class="course-link-icon fa fa-link"></i>
                              </a>
                              <a class="course-title" href="#">Typography From A to Z</a>

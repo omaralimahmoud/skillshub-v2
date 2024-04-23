@@ -36,15 +36,7 @@
                                 <h3 class="card-title">All skills</h3>
 
                                 <div class="card-tools">
-                                    <!-- <div class="input-group input-group-sm" style="width: 150px;">
-                                                                                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
-                                                                                    <div class="input-group-append">
-                                                                                        <button type="submit" class="btn btn-default">
-                                                                                            <i class="fas fa-search"></i>
-                                                                                        </button>
-                                                                                    </div>
-                                                                                </div>-->
+                                  
                                     <button type="button" data-toggle="modal" class=" btn btn-sm  btn-primary" data-target="#add-modal">
                                         Add New
                                     </button>
@@ -70,7 +62,7 @@
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $skill->name }}</td>
                                                 <td>
-                                                 <img src="{{ asset("uploads/$skill->image") }}" height="50px" alt="">
+                                                    <img src="{{ asset("uploads/$skill->image") }}" height="50px" alt="">
                                                 </td>
                                                 <td>{{ $skill->category->name }}</td>
                                                 <td>
@@ -259,7 +251,7 @@
                                     <label>Category</label>
                                     <select class="custom-select form-control"name="category_id" id="edit-form-category-id">
                                         @foreach ($categories as $category)
-                                            <option value="{{ $category->id }}">{{$category->name }}</option>
+                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
                                         @endforeach
 
                                     </select>

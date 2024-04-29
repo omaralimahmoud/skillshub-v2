@@ -1,10 +1,13 @@
 <?php
 
+use App\Http\Controllers\dashboard\AdminController;
 use App\Http\Controllers\dashboard\CategoryController;
 use App\Http\Controllers\dashboard\ExamController;
 use App\Http\Controllers\dashboard\ExamQuestionController;
 use App\Http\Controllers\dashboard\HomeController;
+use App\Http\Controllers\dashboard\MessageController;
 use App\Http\Controllers\dashboard\SkillController;
+use App\Http\Controllers\dashboard\StudentController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth', 'verified', 'role:superAdmin|admin'])->group(function () {
@@ -33,4 +36,20 @@ Route::middleware(['auth', 'verified', 'role:superAdmin|admin'])->group(function
 
         });
 
+    // student
+    Route::get('/students', [StudentController::class, 'index'])->name('students.index');
+    Route::get('/students/{id}', [StudentController::class, 'show'])->name('students.show');
+    Route::get('/students/open-exam/{studentId}/{examId}', [StudentController::class, 'openExam'])->name('students.openExam');
+    Route::get('/students/close-exam/{studentId}/{examId}', [StudentController::class, 'closeExam'])->name('students.closeExam');
+    // Admins
+    Route::middleware('role:superAdmin')->group(function () {
+        Route::get('/admins', [AdminController::class, 'index'])->name('admins.index');
+        Route::get('/admins/create', [AdminController::class, 'create'])->name('admins.create');
+        Route::post('/admins/store', [AdminController::class, 'store'])->name('admins.store');
+        Route::get('/admins/promote/{id}', [AdminController::class, 'promote'])->name('admins.promote');
+        Route::get('/admins/demote/{id}', [AdminController::class, 'demote'])->name('admins.demote');
+    });
+    //Messages
+    Route::resource('/messages', MessageController::class)->only('index', 'show');
+    Route::post('/messages/response/{message}', [MessageController::class, 'response'])->name('messages.response');
 });

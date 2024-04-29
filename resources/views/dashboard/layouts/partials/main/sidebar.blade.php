@@ -52,6 +52,34 @@
                                     <p>Exam</p>
                                 </a>
                             </li>
+
+
+                            <li class="nav-item">
+                                <a href="{{ route('dashboard.students.index') }}" class="nav-link">
+                                    <i class=" nav-icon  fas  fa-user-graduate"></i>
+                                    <p>Students</p>
+                                </a>
+                            </li>
+
+                            @hasrole('superAdmin')
+                            <li class="nav-item">
+                                <a href="{{ route('dashboard.admins.index') }}" class="nav-link">
+                                    <i class=" nav-icon  fas  fa-user-cog"></i>
+                                    <p>Admins</p>
+                                </a>
+                            </li>
+                            @endhasrole
+
+
+
+                            <li class="nav-item">
+                                <a href="{{ route('dashboard.messages.index') }}" class="nav-link">
+                                    <i class="fas fa-envelope-square"></i>
+                                    <p>Messages</p>
+                                </a>
+                            </li>
+
+
                         </ul>
                     </li>
 

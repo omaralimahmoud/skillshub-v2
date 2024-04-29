@@ -18,7 +18,8 @@ return new class extends Migration
             $table->float('score', 5, 2)->nullable();
             $table->smallInteger('time_minutes')->nullable();
             $table->enum('status', ['opened', 'closed'])->default('closed');
-            $table->timestamps();
+            $table->timestamp('started_at')->nullable();
+            $table->timestamp('finished_at')->nullable();
         });
     }
 

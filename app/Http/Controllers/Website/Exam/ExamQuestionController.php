@@ -7,7 +7,6 @@ use App\Models\Exam;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 class ExamQuestionController extends Controller
@@ -19,8 +18,14 @@ class ExamQuestionController extends Controller
          }*/
 
         $user = Auth::user();
-
-        $user->exams()->attach($exam);
+        if ($user->exams->contains($exam->id)) {
+            $user->exams()->updateExistingPivot($exam->id, [
+                'status' => 'closed',
+                'started_at' => now(),
+            ]);
+        } else {
+            $user->exams()->attach($exam->id, ['started_at' => now()]);
+        }
 
         $request->session()->flash('previous', "start/$exam->id");
 
@@ -73,8 +78,8 @@ class ExamQuestionController extends Controller
         // calculating time mins
         $user = Auth::user();
         $pivotRow = $user->exams()->firstWhere('exam_id', $exam->id);
-        $startTime = $pivotRow->pivot->created_at;
-        $submitTime = Carbon::now();
+        $startTime = $pivotRow->pivot->started_at;
+        $submitTime = now();
 
         $time_minutes = $submitTime->diffInMinutes($startTime);
         if ($time_minutes > $pivotRow->duration_minutes) {
@@ -82,9 +87,10 @@ class ExamQuestionController extends Controller
         }
 
         //update  pivot row
-        $user->exams()->updateExistingPivot($exam, [
+        $user->exams()->updateExistingPivot($exam->id, [
             'score' => $score,
             'time_minutes' => $time_minutes,
+            'finished_at' => $submitTime,
         ]);
 
         $request->session()->flash('success', "you finished exam successfully with score $score%");

@@ -112,11 +112,11 @@
                     <div class="card-body">
                         <div class=" form-group">
                             <label> Title</label>
-                            <input type="text" class="form-control" name="Title">
+                            <input type="text" class="form-control" name="Title" value="{{ old('Title') }}">
                         </div>
                         <div class=" form-group">
                             <label> body</label>
-                            <textarea class=" form-control" name="body" rows="5"></textarea>
+                            <textarea class=" form-control" name="body" rows="5">{{ old('body') }}</textarea>
                         </div>
 
                         <div class=" form-group">

@@ -35,7 +35,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <!-- /.card -->
-                      @include('dashboard.pages.messages.message')
+                        @include('dashboard.pages.messages.message')
                         <div class=" col-12 pb-3">
 
                             <div class="card">
@@ -74,14 +74,14 @@
 
 
                                                     <td>
-                                                    <a href="{{ route('dashboard.exams.questions.edit',['exam'=>$exam->id, 'question'=>$question->id]) }}" class="btn btn-sm btn-info ">
-                                                        <i class=" fas fa-edit"></i>
-                                                    </a>
+                                                        <a href="{{ route('dashboard.exams.questions.edit', ['exam' => $exam->id, 'question' => $question->id]) }}" class="btn btn-sm btn-info ">
+                                                            <i class=" fas fa-edit"></i>
+                                                        </a>
 
-                                                </td>
+                                                    </td>
 
 
-  {{-- <td>
+                                                    {{-- <td>
 
 
                                                         <form action="{{ route('dashboard.exams.destroy', $exam->id) }}" method="POST" class=" d-inline-block">
@@ -95,7 +95,7 @@
 
 
 
-                                                         </td>--}}
+                                                         </td> --}}
 
 
 

@@ -63,7 +63,7 @@
                                                     @endif
                                                 </td>
                                                 <td>
-                                                    <a href="{{ route('dashboard.students.show',$student->id) }}" class=" btn btn-success">
+                                                    <a href="{{ route('dashboard.students.show', $student->id) }}" class=" btn btn-success">
                                                         <i class=" fas fa-percent"></i>
                                                     </a>
                                                 </td>

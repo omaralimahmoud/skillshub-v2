@@ -37,7 +37,7 @@
 
                                 <div class="card-tools">
 
-                                    <a href="{{ route('dashboard.exams.create') }}"  class=" btn btn-sm  btn-primary">
+                                    <a href="{{ route('dashboard.exams.create') }}" class=" btn btn-sm  btn-primary">
                                         Add New
                                     </a>
                                 </div>
@@ -74,18 +74,18 @@
                                                         <span class=" badge  bg-danger">No</span>
                                                     @endif
                                                 </td>
-                                                 <td>
+                                                <td>
 
 
-                                                    <a href="{{ route('dashboard.exams.show',$exam->id) }}"  class="btn btn-sm btn-primary ">
+                                                    <a href="{{ route('dashboard.exams.show', $exam->id) }}" class="btn btn-sm btn-primary ">
                                                         <i class=" fas fa-eye"></i>
                                                     </a>
 
-                                                    <a href=" {{ route('dashboard.exams.questions.show',$exam->id) }}"  class="btn btn-sm btn-success ">
+                                                    <a href=" {{ route('dashboard.exams.questions.show', $exam->id) }}" class="btn btn-sm btn-success ">
                                                         <i class=" fas fa-question"></i>
                                                     </a>
 
-                                                      <a href="{{ route('dashboard.exams.edit',$exam->id) }}"  class="btn btn-sm btn-info ">
+                                                    <a href="{{ route('dashboard.exams.edit', $exam->id) }}" class="btn btn-sm btn-info ">
                                                         <i class=" fas fa-edit"></i>
                                                     </a>
 

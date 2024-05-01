@@ -37,14 +37,14 @@
 
                                 <div class="card-tools">
                                     <!-- <div class="input-group input-group-sm" style="width: 150px;">
-                                                                                <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+                                                                                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
 
-                                                                                <div class="input-group-append">
-                                                                                    <button type="submit" class="btn btn-default">
-                                                                                        <i class="fas fa-search"></i>
-                                                                                    </button>
-                                                                                </div>
-                                                                            </div>-->
+                                                                                    <div class="input-group-append">
+                                                                                        <button type="submit" class="btn btn-default">
+                                                                                            <i class="fas fa-search"></i>
+                                                                                        </button>
+                                                                                    </div>
+                                                                                </div>-->
                                     <button type="button" data-toggle="modal" class=" btn btn-sm  btn-primary" data-target="#add-modal">
                                         Add New
                                     </button>
@@ -143,13 +143,13 @@
                             <div class=" col-6">
                                 <div class="form-group">
                                     <label>Name(en)</label>
-                                    <input type="text" name="name_en" class="form-control">
+                                    <input type="text" name="name_en" class="form-control" value="{{ old('name_en') }}">
                                 </div>
                             </div>
                             <div class=" col-6">
                                 <div class="form-group">
                                     <label>Name(ar)</label>
-                                    <input type="text" name="name_ar" class="form-control">
+                                    <input type="text" name="name_ar" class="form-control" value="{{ old('name_ar') }}">
                                 </div>
 
                             </div>

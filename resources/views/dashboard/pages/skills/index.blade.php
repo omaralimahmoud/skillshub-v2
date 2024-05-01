@@ -36,7 +36,7 @@
                                 <h3 class="card-title">All skills</h3>
 
                                 <div class="card-tools">
-                                  
+
                                     <button type="button" data-toggle="modal" class=" btn btn-sm  btn-primary" data-target="#add-modal">
                                         Add New
                                     </button>
@@ -141,13 +141,13 @@
                             <div class=" col-6">
                                 <div class="form-group">
                                     <label>Name(en)</label>
-                                    <input type="text" name="name_en" class="form-control">
+                                    <input type="text" name="name_en" class="form-control" value="{{ old('name_en') }}">
                                 </div>
                             </div>
                             <div class=" col-6">
                                 <div class="form-group">
                                     <label>Name(ar)</label>
-                                    <input type="text" name="name_ar" class="form-control">
+                                    <input type="text" name="name_ar" class="form-control" value="{{ old('name_ar') }}">
                                 </div>
 
                             </div>

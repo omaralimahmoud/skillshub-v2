@@ -60,16 +60,16 @@
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $message->name }}</td>
                                                 <td>{{ $message->email }}</td>
-                                                <td> {{ $message->subject ?? "..." }} </td>
+                                                <td> {{ $message->subject ?? '...' }} </td>
 
                                                 <td>
 
 
 
 
-                                                        <a href="{{ route('dashboard.messages.show', $message->id) }}" class=" btn btn-primary">
-                                                            <i class=" fas fa-eye"></i>
-                                                        </a>
+                                                    <a href="{{ route('dashboard.messages.show', $message->id) }}" class=" btn btn-primary">
+                                                        <i class=" fas fa-eye"></i>
+                                                    </a>
 
 
 

@@ -34,7 +34,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <!-- /.card -->
-                     @include('dashboard.pages.messages.message')
+                        @include('dashboard.pages.messages.message')
                         <div class=" col-md-10 offset-md-1 pb-3">
 
                             <div class="card">
@@ -127,8 +127,8 @@
                         </div>
                         <!-- /.card -->
                     </div>
-                   <a href="{{ route('dashboard.exams.questions.show',$exam->id) }}" class=" btn btn-sm  btn-success">Show Question </a>
-                   <a href="{{ url()->previous() }}" class=" btn btn-sm  btn-primary">Back</a>
+                    <a href="{{ route('dashboard.exams.questions.show', $exam->id) }}" class=" btn btn-sm  btn-success">Show Question </a>
+                    <a href="{{ url()->previous() }}" class=" btn btn-sm  btn-primary">Back</a>
                 </div>
 
 

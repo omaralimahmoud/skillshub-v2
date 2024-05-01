@@ -73,8 +73,7 @@
                                                 <td>
 
 
-                                                    @if($admin->hasRole('admin'))
-
+                                                    @if ($admin->hasRole('admin'))
                                                         <a href="{{ route('dashboard.admins.promote', $admin->id) }}" class=" btn btn-danger">
                                                             <i class=" fas fa-level-up-alt"></i>
                                                         </a>

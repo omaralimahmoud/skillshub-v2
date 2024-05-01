@@ -39,7 +39,7 @@
                                     <div class=" col-6">
                                         <div class=" form-group">
                                             <label> Name(en)</label>
-                                            <input type="text" class=" form-control" name="name_en">
+                                            <input type="text" class=" form-control" name="name_en" value="{{ old('name_en') }}">
                                         </div>
 
                                     </div>
@@ -48,7 +48,7 @@
                                     <div class=" col-6">
                                         <div class=" form-group">
                                             <label> Name(ar)</label>
-                                            <input type="text" class=" form-control" name="name_ar">
+                                            <input type="text" class=" form-control" name="name_ar" value="{{ old('name_ar') }}">
                                         </div>
 
                                     </div>
@@ -65,12 +65,12 @@
 
                                 <div class=" form-group">
                                     <label> Description(en)</label>
-                                    <textarea name="description_en" class=" form-control" rows="5"></textarea>
+                                    <textarea name="description_en" class=" form-control" rows="5">{{ old('description_en') }}</textarea>
                                 </div>
 
                                 <div class=" form-group">
                                     <label> Description(ar)</label>
-                                    <textarea name="description_ar" class=" form-control" rows="5"></textarea>
+                                    <textarea name="description_ar" class=" form-control" rows="5">{{ old('description_ar') }}</textarea>
                                 </div>
 
                                 <div class=" row">
@@ -110,7 +110,7 @@
                                     <div class=" col-4">
                                         <div class=" form-group">
                                             <label>Question_number</label>
-                                            <input type="number" class=" form-control" name="question_number">
+                                            <input type="number" class=" form-control" name="question_number" value="{{ old('question_number') }}">
                                         </div>
 
                                     </div>
@@ -118,7 +118,7 @@
                                     <div class=" col-4">
                                         <div class=" form-group">
                                             <label>Difficulty</label>
-                                            <input type="number" class=" form-control" name="difficulty">
+                                            <input type="number" class=" form-control" name="difficulty" value="{{ old('difficulty') }}">
                                         </div>
 
                                     </div>
@@ -127,7 +127,7 @@
                                     <div class=" col-4">
                                         <div class=" form-group">
                                             <label>duration_minutes</label>
-                                            <input type="number" class=" form-control" name="duration_minutes">
+                                            <input type="number" class=" form-control" name="duration_minutes" value="{{ old('duration_minutes') }}">
                                         </div>
 
                                     </div>

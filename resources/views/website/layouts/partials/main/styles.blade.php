@@ -5,3 +5,4 @@
       <link rel="stylesheet" href="{{ asset('assets/website/css/font-awesome.min.css') }}">
       <!-- Custom stlylesheet -->
       <link type="text/css" rel="stylesheet" href="{{ asset('assets/website/css/style.css') }}" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">

@@ -21,6 +21,7 @@
     <!-- /preloader -->
     @include('website.layouts.partials.main.footer')
     @include('website.layouts.partials.main.scripts')
+    @include('website.layouts.partials.main.pusher')
     @stack('scripts')
 </body>
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\dashboard;
 
+use App\Events\ExamAddedEvent;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\dashboard\ExamStoreQuestionRequest;
 use App\Http\Requests\dashboard\ExamUpdateQuestionRequest;
@@ -59,6 +60,8 @@ class ExamQuestionController extends Controller
         $exam->update([
             'is_active' => 1,
         ]);
+
+        event(new ExamAddedEvent);
 
         return redirect(route('dashboard.exams.index'));
 

@@ -17,11 +17,6 @@ class AdminController extends Controller
     {
         $admins = User::role(['admin', 'superAdmin'])->latest()->paginate(10);
 
-        // $Adminroles= Role::select('id','name')->get();
-        $a = Role::all()->pluck('name');
-
-        //dd($x);
-
         return view('dashboard.pages.admins.index', [
             'admins' => $admins,
 

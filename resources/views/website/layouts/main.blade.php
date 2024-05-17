@@ -13,6 +13,7 @@
 <body>
 
     @include('website.layouts.partials.main.navbar')
+    
     @yield('content')
     <!-- preloader -->
     <div id='preloader'>

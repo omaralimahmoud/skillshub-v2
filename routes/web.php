@@ -20,6 +20,5 @@ Route::prefix(LaravelLocalization::setLocale())->middleware(LocaleSessionRedirec
     Route::name('website.')->group(base_path('routes/website.php'));
 
     Route::prefix('dashboard')->name('dashboard.')->group(base_path('routes/dashboard.php'));
-    require __DIR__.'/auth.php';
 
 });

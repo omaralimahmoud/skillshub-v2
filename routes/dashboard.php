@@ -10,7 +10,9 @@ use App\Http\Controllers\dashboard\SkillController;
 use App\Http\Controllers\dashboard\StudentController;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware(['auth', 'verified', 'role:superAdmin|admin'])->group(function () {
+Route::name('dashboard.auth.')->group(base_path('routes/dashboard/auth.php'));
+
+Route::middleware(['auth:admins', 'verified:dashboard.dashboard.auth.verification.notice', 'role:superAdmin|admin'])->group(function () {
     Route::resource('/', HomeController::class)->only('index');
     Route::resource('/categories', CategoryController::class)->only('index', 'store', 'destroy');
     Route::get('/categories/toggle/{category}', [CategoryController::class, 'toggle'])->name('categories.toggle');

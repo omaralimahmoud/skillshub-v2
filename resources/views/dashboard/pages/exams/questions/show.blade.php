@@ -19,7 +19,7 @@
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('dashboard.index') }}">Home</a></li>
                             <li class="breadcrumb-item"><a href="{{ route('dashboard.exams.index') }}">Exams</a></li>
-                            <li class="breadcrumb-item"><a href="{{ route('dashboard.exams.show', $exam->id) }}">Exams</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('dashboard.exams.show', $exam->id) }}">Back</a></li>
                             <li class="breadcrumb-item active">Questions</li>
                         </ol>
                     </div>

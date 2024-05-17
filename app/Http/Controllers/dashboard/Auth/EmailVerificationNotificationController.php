@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Website\Auth;
+namespace App\Http\Controllers\dashboard\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -18,12 +17,12 @@ class EmailVerificationNotificationController extends Controller
     {
 
         if ($request->user()->hasVerifiedEmail()) {
-            return redirect()->intended(RouteServiceProvider::HOME);
+            return redirect()->intended(route('dashboard.index'));
         }
 
         VerifyEmail::createUrlUsing(function ($notifiable) {
             return URL::temporarySignedRoute(
-                'website.website.auth.verification.verify',
+                'dashboard.dashboard.auth.verification.verify',
                 now()->addMinutes(config('auth.verification.expire', 60)),
                 [
                     'id' => $notifiable->getKey(),

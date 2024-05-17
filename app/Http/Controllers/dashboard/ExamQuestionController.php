@@ -21,9 +21,8 @@ class ExamQuestionController extends Controller
         ]);
     }
 
-    public function create(Exam $exam): View
+    public function create(Exam $exam): RedirectResponse|View
     {
-
         if (session('previous') !== "exam/$exam->id" and session('current') !== "exam/$exam->id") {
             return redirect(route('dashboard.exams.index'));
         }
@@ -42,8 +41,6 @@ class ExamQuestionController extends Controller
 
     public function store(Exam $exam, ExamStoreQuestionRequest $request): RedirectResponse
     {
-        $request->session()->flash('current', "exam/$exam->id");
-
         for ($i = 0; $i < $exam->question_number; $i++) {
             Question::create([
                 'exam_id' => $exam->id,

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Website\Auth;
+namespace App\Http\Controllers\dashboard\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
@@ -15,6 +15,7 @@ class VerifyEmailController extends Controller
      */
     public function __invoke(EmailVerificationRequest $request): RedirectResponse
     {
+
         if ($request->user()->hasVerifiedEmail()) {
             return redirect()->intended(RouteServiceProvider::HOME.'?verified=1');
         }
@@ -23,6 +24,6 @@ class VerifyEmailController extends Controller
             event(new Verified($request->user()));
         }
 
-        return to_route('website.index');
+        return to_route('dashboard.index');
     }
 }

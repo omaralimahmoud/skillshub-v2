@@ -15,7 +15,7 @@
             <!-- login form -->
             <div class="col-md-6 col-md-offset-3">
                 <div class="contact-form">
-                    <form action="{{ route('verification.send') }}" method="POST">
+                    <form action="{{ route('website.website.auth.verification.send') }}" method="POST">
                         @csrf
                         <button class="main-button icon-button pull-right" type="submit">{{ __('website.global.resend_email') }}</button>
                     </form>

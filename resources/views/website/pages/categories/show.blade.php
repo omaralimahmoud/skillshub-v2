@@ -34,7 +34,7 @@
                                 <div class="single-blog">
                                     <div class="blog-img">
                                         <a href="skill.html">
-                                            <img src="{{ asset("uploads/$skill->image") }}" alt="">
+                                            <img   src="{{ asset("uploads/$skill->image") }}" alt="">
                                         </a>
                                     </div>
                                     <h4><a href="{{ route('website.skills.show', $skill->id) }}"> {{ $skill->name }}</a></h4>

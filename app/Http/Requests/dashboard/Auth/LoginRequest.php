@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Auth;
+namespace App\Http\Requests\dashboard\Auth;
 
 use App\Models\User;
 use Illuminate\Auth\Events\Lockout;
@@ -42,7 +42,8 @@ class LoginRequest extends FormRequest
     public function authenticate(): void
     {
         $this->ensureIsNotRateLimited();
-        $user = User::role(['student'])->where('email', $this->email)->first();
+
+        $user = User::role(['superAdmin', 'admin'])->where('email', $this->email)->first();
         if ($user === null || ! Hash::check($this->password, $user->password)) {
             RateLimiter::hit($this->throttleKey());
 
@@ -50,7 +51,9 @@ class LoginRequest extends FormRequest
                 'email' => trans('auth.failed'),
             ]);
         }
-        Auth::guard('web')->login($user, $this->boolean('remember'));
+
+        Auth::guard('admins')->login($user, $this->boolean('remember'));
+
         RateLimiter::clear($this->throttleKey());
     }
 

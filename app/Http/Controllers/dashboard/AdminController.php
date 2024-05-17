@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\dashboard\AdminRequest;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\URL;
 use Spatie\Permission\Models\Role;
 
 class AdminController extends Controller
@@ -32,14 +34,8 @@ class AdminController extends Controller
         ]);
     }
 
-    public function store(Request $request): RedirectResponse
+    public function store(AdminRequest $request): RedirectResponse
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255|unique:users,email',
-            'password' => 'required|string|min:5|max:25|confirmed',
-            'role' => 'required|string|max:255',
-        ]);
 
         $user = User::create([
             'name' => $request->name,
@@ -48,6 +44,18 @@ class AdminController extends Controller
         ]);
         $create_role = $request->role;
         $user->assignRole($create_role);
+
+        VerifyEmail::createUrlUsing(function ($notifiable) {
+            return URL::temporarySignedRoute(
+                'dashboard.dashboard.auth.verification.verify',
+                now()->addMinutes(config('auth.verification.expire', 60)),
+                [
+                    'id' => $notifiable->getKey(),
+                    'hash' => sha1($notifiable->getEmailForVerification()),
+                ]
+            );
+        });
+
         event(new Registered($user));
 
         return redirect(route('dashboard.admins.index'));

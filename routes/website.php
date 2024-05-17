@@ -19,16 +19,16 @@ Route::resource('skills', SkillController::class)->only('show');
 Route::resource('exams', ExamController::class)->only(['show']);
 
 Route::resource('contact', ContactController::class)->only(['index', 'store']);
-Route::resource('profile', ProfileController::class)->only('index')->middleware(['auth', 'verified', 'role:student']);
+Route::resource('profile', ProfileController::class)->only('index')->middleware(['auth:web', 'verified:website.website.auth.verification.notice', 'role:student']);
 // custom route
 Route::prefix('exams/{exam}/questions')
     ->name('exams.questions.')
     ->controller(ExamQuestionController::class)
     ->group(function () {
-        Route::get('/', 'create')->name('create')->middleware(['auth', 'verified', 'role:student']);
+        Route::get('/', 'create')->name('create')->middleware(['auth:web', 'verified:website.website.auth.verification.notice', 'role:student']);
 
-        Route::post('/', 'store')->name('store')->middleware(['auth', 'verified', 'role:student', 'can-enter-exam']);
+        Route::post('/', 'store')->name('store')->middleware(['auth:web', 'verified:website.website.auth.verification.notice', 'role:student', 'can-enter-exam']);
 
-        Route::post('/submit', 'submit')->name('submit')->middleware(['auth', 'verified', 'role:student']);
+        Route::post('/submit', 'submit')->name('submit')->middleware(['auth:web', 'verified:website.website.auth.verification.notice', 'role:student']);
 
     });

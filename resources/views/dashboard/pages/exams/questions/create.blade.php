@@ -46,7 +46,7 @@
                                             <div class=" form-group">
 
                                                 <label> Title</label>
-                                                <input type="text" class=" form-control" name="titles[]" value="{{ old('titles[]') }}" required>
+                                                <input type="text" class=" form-control" name="titles[]" value="{{ old('titles[]') }}" >
                                             </div>
                                         </div>
 
@@ -56,7 +56,7 @@
                                             <div class=" form-group">
 
                                                 <label> right_answer</label>
-                                                <input type="number" min="1" max="4" class=" form-control" name="right_answers[]" value="{{ old('right_answers[]') }}" required>
+                                                <input type="number" min="1" max="4" class=" form-control" name="right_answers[]" value="{{ old('right_answers[]') }}" >
                                             </div>
                                         </div>
 
@@ -64,7 +64,7 @@
                                             <div class=" form-group">
 
                                                 <label> Option 1</label>
-                                                <input type="text" class=" form-control" name="option_1s[]" value="{{ old('option_1s[]') }}" required>
+                                                <input type="text" class=" form-control" name="option_1s[]" value="{{ old('option_1s[]') }}" >
                                             </div>
                                         </div>
 
@@ -72,7 +72,7 @@
                                             <div class=" form-group">
 
                                                 <label> Option 2</label>
-                                                <input type="text" class=" form-control" name="option_2s[]" value="{{ old('option_2s[]') }}" required>
+                                                <input type="text" class=" form-control" name="option_2s[]" value="{{ old('option_2s[]') }}" >
                                             </div>
                                         </div>
 
@@ -80,7 +80,7 @@
                                             <div class=" form-group">
 
                                                 <label> Option 3</label>
-                                                <input type="text" class=" form-control" name="option_3s[]" value="{{ old('option_3s[]') }}" required>
+                                                <input type="text" class=" form-control" name="option_3s[]" value="{{ old('option_3s[]') }}" >
                                             </div>
                                         </div>
 
@@ -88,7 +88,7 @@
                                             <div class=" form-group">
 
                                                 <label> Option 4</label>
-                                                <input type="text" class=" form-control" name="option_4s[]" value="{{ old('option_4s[]') }}" required>
+                                                <input type="text" class=" form-control" name="option_4s[]" value="{{ old('option_4s[]') }}" >
                                             </div>
                                         </div>
 

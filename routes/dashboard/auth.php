@@ -1,19 +1,20 @@
-
 <?php
-use App\Http\Controllers\website\Auth\AuthenticatedSessionController;
-use App\Http\Controllers\website\Auth\EmailVerificationNotificationController;
-use App\Http\Controllers\website\Auth\EmailVerificationPromptController;
-use App\Http\Controllers\website\Auth\NewPasswordController;
-use App\Http\Controllers\website\Auth\PasswordResetLinkController;
-use App\Http\Controllers\website\Auth\RegisteredUserController;
-use App\Http\Controllers\website\Auth\VerifyEmailController;
+
+use App\Http\Controllers\dashboard\Auth\AuthenticatedSessionController;
+//use App\Http\Controllers\dashboard\Auth\ConfirmablePasswordController;
+use App\Http\Controllers\dashboard\Auth\EmailVerificationNotificationController;
+use App\Http\Controllers\dashboard\Auth\EmailVerificationPromptController;
+use App\Http\Controllers\dashboard\Auth\NewPasswordController;
+//use App\Http\Controllers\dashboard\Auth\PasswordController;
+use App\Http\Controllers\dashboard\Auth\PasswordResetLinkController;
+use App\Http\Controllers\dashboard\Auth\RegisteredUserController;
+use App\Http\Controllers\dashboard\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware('guest:web')->group(function () {
-    Route::get('register', [RegisteredUserController::class, 'create'])
-        ->name('register');
-
-    Route::post('register', [RegisteredUserController::class, 'store']);
+Route::middleware('guest:admins')->group(function () {
+    /*  Route::get('register', [RegisteredUserController::class, 'create'])
+          ->name('register');
+     Route::post('register', [RegisteredUserController::class, 'store']);*/
     Route::get('login', [AuthenticatedSessionController::class, 'create'])
         ->name('login');
 
@@ -32,7 +33,7 @@ Route::middleware('guest:web')->group(function () {
         ->name('password.store');
 });
 
-Route::middleware('auth:web')->group(function () {
+Route::middleware('auth:admins')->group(function () {
     Route::get('verify-email', EmailVerificationPromptController::class)
         ->name('verification.notice');
 

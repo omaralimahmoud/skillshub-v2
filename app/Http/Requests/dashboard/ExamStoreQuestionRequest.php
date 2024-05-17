@@ -21,6 +21,8 @@ class ExamStoreQuestionRequest extends FormRequest
      */
     public function rules(): array
     {
+        $this->session()->flash('current', 'exam/'.$this->route('exam')->id);
+
         return [
             'titles' => 'required|array',
             'titles.*' => 'required|string|max:500',
@@ -36,4 +38,6 @@ class ExamStoreQuestionRequest extends FormRequest
             'option_4s.*' => 'required|string|max:255',
         ];
     }
+
+    // protected function prepareForValidation(){}
 }

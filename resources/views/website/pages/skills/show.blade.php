@@ -12,6 +12,7 @@
     <!-- /Hero-area -->
 
     <!-- Blog -->
+    <!-- courses -->
     <div id="blog" class="section">
 
         <!-- container -->
@@ -26,26 +27,35 @@
                     <!-- row -->
                     <div class="row">
 
+                        <!-- single exam -->
                         @foreach ($exams as $exam)
-                            <!-- single exam -->
-                            <div class="col-md-3">
-                                <div class="single-blog">
-                                    <div class="blog-img">
-                                        <a href="exam.html">
-                                            <img src="{{ asset("uploads/$exam->image") }}" alt="">
-                                        </a>
-                                    </div>
-                                    <h4><a href="{{ route('website.exams.show', $exam->id) }}"> {{ $exam->name }}</a></h4>
-                                    <div class="blog-meta">
-                                        <span> {{ Carbon\Carbon::parse($exam->created_at)->format('d M, Y') }} </span>
-                                        <div class="pull-right">
-                                            <span class="blog-meta-comments"><a href="#"><i class="fa fa-users"></i> {{ $exam->users_count }}</a></span>
-                                        </div>
+                        <div class="col-md-6">
+                            <div class="single-blog">
+                                <div class="blog-img">
+                                    <a href="exam.html">
+                                        <img class="" src="{{ asset("uploads/$exam->image") }}" alt="">
+                                    </a>
+                                </div>
+                                <h4><a href="{{ route('website.exams.show', $exam->id) }}"> {{ $exam->name }}</a></h4>
+                                <div class="blog-meta">
+                                    <span>{{ Carbon\Carbon::parse($exam->created_at)->format('d M, Y') }}</span>
+                                    <div class="pull-right">
+                                        <span class="blog-meta-comments"><a href="#"><i class="fa fa-users"></i> {{ $exam->users_count }}</a></span>
                                     </div>
                                 </div>
                             </div>
-                            <!-- /single exam -->
+                        </div>
+                        <!-- /single exam -->
                         @endforeach
+
+
+
+
+
+
+
+
+
                     </div>
                     <!-- /row -->
 
@@ -60,5 +70,7 @@
         <!-- container -->
 
     </div>
+
+    <!-- /courses -->
     <!-- /Blog -->
 @endsection

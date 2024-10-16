@@ -44,11 +44,12 @@
                         <x-auth-session-status :status="session('status')" />
                         <form action="{{ route('website.website.auth.login') }}" method="POST">
                             @csrf
-                            <input class="input" type="email" name="email" placeholder="{{ __('website.global.email') }}">
                             <x-input-error :messages="$errors->get('email')" class="mt-2  alert-danger" />
 
-                            <input class="input" type="password" name="password" placeholder="{{ __('website.global.password') }}">
+                            <input class="input" type="email" name="email" placeholder="{{ __('website.global.email') }}">
                             <x-input-error :messages="$errors->get('password')" class="mt-2  alert-danger" />
+
+                            <input class="input" type="password" name="password" placeholder="{{ __('website.global.password') }}">
 
                             <input type="checkbox" name="remember" class=" custom-control-input">
                             <label class=" custom-control-label"> {{ __('website.global.remember_me') }}</label>

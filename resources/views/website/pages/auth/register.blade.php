@@ -44,13 +44,15 @@
                         <h4>{{ __('website.global.sign_up') }}</h4>
                         <form action="{{ route('website.website.auth.register') }}" method="POST">
                             @csrf
-                            <input class="input" type="text" name="name" placeholder="{{ __('website.global.name') }}" :value="old('name')" autofocus>
                             <x-input-error :messages="$errors->get('name')" class="mt-2 alert-danger" />
-                            <input class="input" type="email" name="email" placeholder="{{ __('website.global.email') }}" :value="old('email')" autofocus>
+
+                            <input class="input" type="text" name="name" placeholder="{{ __('website.global.name') }}" :value="old('name')" autofocus>
                             <x-input-error :messages="$errors->get('email')" class="mt-2  alert-danger" />
 
-                            <input class="input" type="password" name="password" placeholder="{{ __('website.global.password') }}">
+                            <input class="input" type="email" name="email" placeholder="{{ __('website.global.email') }}" :value="old('email')" autofocus>
                             <x-input-error :messages="$errors->get('password')" class="mt-2 alert-danger" />
+
+                            <input class="input" type="password" name="password" placeholder="{{ __('website.global.password') }}">
 
                             <input class="input" type="password" name="password_confirmation" placeholder="{{ __('website.global.confirm_password') }}">
                             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2 alert-danger" />
